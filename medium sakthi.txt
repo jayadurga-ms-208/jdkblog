@@ -1,0 +1,29 @@
+class Solution {
+    public List<Integer> findAnagrams(String s, String p)
+    {
+        List<Integer> ans = new ArrayList<>();
+        HashMap<Character,Integer> hs = new HashMap<>();
+        HashMap<Character,Integer> hp = new HashMap<>();
+
+        int k = p.length;
+
+        for(int i=0; i<k; i++)
+        {
+            Character cs = new Character(s.charAt(i));
+            if(hs.contains(cs))
+                hs.put(cs, hs.get(cs)+1);
+            else
+                hs.put(cs, 1);
+
+            Character cp = new Character(p.charAt(i));
+            if(hp.contains(cs))
+                hp.put(cs, hp.get(cs)+1);
+            else
+                hp.put(cs, 1);
+        }
+
+        System.out.print(hs+"\n"+hp);
+
+        return ans;
+    }
+}

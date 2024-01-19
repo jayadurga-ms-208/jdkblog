@@ -1,0 +1,38 @@
+Hey folks, Welcome to Jdkblog. Here you gonna read about step by step process of creating a simple jdk blog using react with deep understanding
+
+Chap 1: Creating React Application
+
+	1> Download "Simple react snippets" in VS code extensions (for shortcuts)
+	2> Go to settings, tap setting, type emmet -> include languages -> "javascript" and value "javascriptreact"
+	3> Go to cmd prompt -> cd Desktop -> create react app using command "npx create-react-app jdkblog"
+	4> cd jdkblog -> code . (redirects to vs code)
+	5> Deep understanding of nodemodules(all dependencies), public(shows as single page html in root in browser), src (all react folders it have, index.js - render the js into DOM html root, package.json - scripts helps to preview all app in browser)
+	6> npm start
+
+
+Chap 2: Multiple Components are the building block and it makes the react page( contains template and js logic). It renders into the DOM. For eg: <App> component inside index.js. Inside App.js everything stored as jsx which might later converted into html and render into DOM in index.js
+
+Note: 1) less than 16 version, import react in every component page
+      2) div.content (create div with className="content") bcoz of emmet
+
+Chap 3: Dynamic Values in Template
+
+1) In component, before jsx template (i.e before return statement dynamic values can be created using const keyword. Const can store any datatypes and it converts to string and shows as output. But it can't store the OBJECT and BOOLEAN.
+
+for eg: const likes ="welcome", const likes = "20" -- valid
+        const likes = {person : "jai" , number : "50"} -- not valid
+
+2) These dynmaic values can be called in react using {}. Or inside {} direct values can be given such as string, int, array, evaluation functions
+
+
+function App(){
+	const likes = 50;
+	const link = "https://www.google.com/" ;
+	return(
+	<div className="App">
+	<h1>{likes}</h1>
+	<p>{10}</p>
+	<p>{"hello"}</p>
+	<p>{[1,2,3]}</p>
+	<a href={link}>google</a> // Link can be stored as dynamic value outside of jsx template. Then it gets called inside {}
+	
